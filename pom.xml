@@ -57,6 +57,14 @@
       <artifactId>tomcat-embed-jasper</artifactId>
       <scope>provided</scope>
     </dependency>
+
+    <!-- SQLログ用 -->
+    <dependency>
+        <groupId>org.lazyluke</groupId>
+        <artifactId>log4jdbc-remix</artifactId>
+        <version>0.2.7</version>
+    </dependency>
+
   </dependencies>
 
   <build>
