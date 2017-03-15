@@ -1,0 +1,18 @@
+server:
+  port: 9000
+
+spring:
+  datasource: 
+    driverClassName: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:XE
+    username: WFIS_WEB
+    password: password
+  view: 
+    prefix: /WEB-INF/view/
+    suffix: .jsp
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  view:
+    prefix: /WEB-INF/views/
+    suffix: .jsp
