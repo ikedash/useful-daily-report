@@ -10,5 +10,12 @@
 <body>
         <h1>Hello!</h1>
         <p>これはサンプルのページです。</p>
+        <p class="msg">${datas}</p>
+        <hr>
+        <form method="POST" action="/post">
+          <input type="text" name="id"><br>
+          <input type="text" name="name"><br>
+          <input type="submit">
+        </form>
 </body>
 </html>

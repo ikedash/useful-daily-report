@@ -1,10 +1,7 @@
-package jp.co.tis.rookies.service;
+package jp.co.tis.rookies._sample;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import jp.co.tis.rookies.domain.SampleDomain;
-import jp.co.tis.rookies.repository.SampleRepository;
 
 
 

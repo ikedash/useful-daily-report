@@ -1,6 +1,7 @@
 package jp.co.tis.rookies.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -12,9 +13,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "sample")
-public class SampleDomain {
+@Table(name = "daily_report")
+public class DailyReport {
     @Id
-    private String id;
-    private String name;
+    @GeneratedValue
+    private Integer id;
+    private String title;
+    private String body;
 }
