@@ -11,8 +11,7 @@
 * 他者とコミュニケーションを円滑に行える仕組み が備わっている。
 
 # システムアーキテクチャ
-* FW : Spring Boot
-* アプリケーションアーキテクチャ : Spring MVC
+* FW : Spring Boot(Spring MVC)
 * View : JSP
 * DB : Oracle
 
