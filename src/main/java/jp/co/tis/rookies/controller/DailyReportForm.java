@@ -1,4 +1,4 @@
-package jp.co.tis.rookies.web;
+package jp.co.tis.rookies.controller;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
