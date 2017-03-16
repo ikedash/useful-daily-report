@@ -8,11 +8,8 @@ spring:
     username: WFIS_WEB
     password: password
   view: 
-    prefix: /WEB-INF/view/
+    prefix: /WEB-INF/views/
     suffix: .jsp
   jpa:
     hibernate:
       ddl-auto: create-drop
-  view:
-    prefix: /WEB-INF/views/
-    suffix: .jsp

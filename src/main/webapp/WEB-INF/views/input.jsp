@@ -21,12 +21,12 @@
     <div class="ui main container">
       <div class="ui information container">
         <h1 class="ui center aligned header">日報投稿画面</h1>
-        <form class="ui form" method="post" action="/daily-report/post">
+        <form class="ui form" method="post" action="/daily-report/confirm">
           <div class="field">
             <label>タイトル</label>
-            <input type="text" name="title" />
+            <input type="text" name="title" value="${title}"/>
             <label>内容</label>
-            <input type="text" name="body" />
+            <input type="text" name="body" value="${body}"/>
           </div>
           <input class="ui fluid green button" type="submit" value="投稿する" />
         </form>
