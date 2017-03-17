@@ -1,5 +1,6 @@
 package jp.co.tis.rookies.controller;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -44,7 +45,7 @@ public class DailyReportController {
     @RequestMapping(value = "/daily-report/confirm", method = RequestMethod.POST)
     public String confirm(@Validated DailyReportForm form, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            // 暫定的なエラー処理.
+            // TODO: 暫定的なエラー処理.
             setErrors(result, model);
             return "input";
         }
@@ -94,13 +95,15 @@ public class DailyReportController {
     @RequestMapping(value = "/daily-report/post", method = RequestMethod.POST)
     public String post(@Validated DailyReportForm form, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            // 暫定的なエラー処理.
+            // TODO: 暫定的なエラー処理.
             setErrors(result, model);
             return "input";
         }
 
         DailyReport report = new DailyReport();
         BeanUtils.copyProperties(form, report);
+        report.setContributor("test user"); // TODO: ユーザ管理実装後に対応
+        report.setCreatedAt(new Date());
 
         service.create(report);
 
