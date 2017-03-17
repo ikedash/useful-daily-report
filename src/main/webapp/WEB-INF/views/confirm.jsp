@@ -5,17 +5,8 @@
 
 <head>
   <title>投稿内容確認画面</title>
-  <link href="http://fonts.googleapis.com/css?family=Exo:900" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css" rel="stylesheet">
-  <style>/** CSS：Area */
-  body {
-    padding-top: 50px;
-  }
-  </style>
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script src="/js/ie10-viewport-bug-workaround.js"></script>
+  <link href="/webjars/Semantic-UI/2.2.9/semantic.min.css" rel="stylesheet">
+  <link href="/css/main.css" rel="stylesheet">
 </head>
 
 <body>

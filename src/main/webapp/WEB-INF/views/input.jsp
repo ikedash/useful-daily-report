@@ -5,13 +5,8 @@
 
 <head>
   <title>日報投稿画面</title>
-  <link href="http://fonts.googleapis.com/css?family=Exo:900" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css" rel="stylesheet">
-  <style>/** CSS：Area */
-  body {
-    padding-top: 50px;
-  }
-  </style>
+  <link href="/webjars/Semantic-UI/2.2.9/semantic.min.css" rel="stylesheet">
+  <link href="/css/main.css" rel="stylesheet">
 </head>
 
 <body>
@@ -58,7 +53,7 @@
 
           <div class="field">
             <label>満足度の理由</label>
-            <input type="text" name="causeOfSs" value="${causeOfSs}"/>
+            <textarea name="causeOfSs">${causeOfSs}</textarea>
           </div>
 
           <div class="five wide field">
