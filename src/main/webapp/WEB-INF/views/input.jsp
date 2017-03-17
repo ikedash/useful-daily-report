@@ -25,10 +25,57 @@
           <div class="field">
             <label>タイトル</label>
             <input type="text" name="title" value="${title}"/>
-            <label>内容</label>
-            <input type="text" name="body" value="${body}"/>
           </div>
-          <input class="ui fluid green button" type="submit" value="投稿する" />
+
+          <div class="field">
+            <label>内容</label>
+            <textarea name="body">${body}</textarea>
+          </div>
+
+          <div class="field">
+            <label>本日の研修満足度</label>
+            <div class="ui slider checkbox">
+              <input type="radio" name="ss" value="VeryGood">
+              <label>VeryGood</label>
+            </div>
+            <div class="ui slider checkbox">
+              <input type="radio" name="ss" value="Good">
+              <label>Good</label>
+            </div>
+            <div class="ui slider checkbox">
+              <input type="radio" name="ss" value="Medium">
+              <label>Medium</label>
+            </div>
+            <div class="ui slider checkbox">
+              <input type="radio" name="ss" value="Bad">
+              <label>Bad</label>
+            </div>
+            <div class="ui slider checkbox">
+              <input type="radio" name="ss" value="VeryBad">
+              <label>VeryBad</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>満足度の理由</label>
+            <input type="text" name="causeOfSs" value="${causeOfSs}"/>
+          </div>
+
+          <div class="five wide field">
+            <label>関連するタグ</label>
+            <select class="ui dropdown" name="tag">
+              <option value="">選択してください</option>
+              <option value="java">Java</option>
+              <option value="JavaScript">JavaScript</option>
+              <option value="JSP">JSP</option>
+              <option value="DB">DB</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <input class="ui fluid green button" type="submit" value="投稿する" />
+          </div>
+
         </form>
       </div>
     </div>

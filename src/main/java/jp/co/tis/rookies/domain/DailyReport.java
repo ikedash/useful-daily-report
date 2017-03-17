@@ -20,4 +20,7 @@ public class DailyReport {
     private Integer id;
     private String title;
     private String body;
+    private String ss; // Student Satisfaction
+    private String causeOfSs;
+    private String tag;
 }

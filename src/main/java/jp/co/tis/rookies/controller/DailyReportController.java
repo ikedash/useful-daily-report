@@ -1,6 +1,8 @@
 package jp.co.tis.rookies.controller;
 
-import org.apache.commons.lang.StringUtils;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -49,6 +51,9 @@ public class DailyReportController {
 
         model.addAttribute("title", form.getTitle());
         model.addAttribute("body", form.getBody());
+        model.addAttribute("ss", form.getSs());
+        model.addAttribute("causeOfSs", form.getCauseOfSs());
+        model.addAttribute("tag", form.getTag());
 
         return "confirm";
     }
@@ -59,15 +64,21 @@ public class DailyReportController {
      * @return input.jsp
      */
     @RequestMapping(value = "/daily-report/back")
-    public String back(Model model, @RequestParam(value = "title", required = false) String title,
-            @RequestParam(value = "body", required = false) String body) {
+    public String back(Model model,
+            @RequestParam(value = "title", required = false) String title,
+            @RequestParam(value = "body", required = false) String body,
+            @RequestParam(value = "ss", required = false) String ss,
+            @RequestParam(value = "causeOfSs", required = false) String causeOfSs,
+            @RequestParam(value = "tag", required = false) String tag) {
 
-        if (StringUtils.isNotEmpty(title)) {
-            model.addAttribute("title", title);
-        }
-        if (StringUtils.isNotEmpty(body)) {
-            model.addAttribute("body", body);
-        }
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("title", title);
+        map.put("body", body);
+        map.put("ss", ss);
+        map.put("causeOfSs", causeOfSs);
+        map.put("tag", tag);
+
+        model.addAllAttributes(map);
 
         return "forward:/daily-report/input";
     }
@@ -102,6 +113,15 @@ public class DailyReportController {
         }
         if (result.hasFieldErrors("body")) {
             model.addAttribute("body", "精査エラー");
+        }
+        if (result.hasFieldErrors("ss")) {
+            model.addAttribute("ss", "精査エラー");
+        }
+        if (result.hasFieldErrors("causeOfSs")) {
+            model.addAttribute("causeOfSs", "精査エラー");
+        }
+        if (result.hasFieldErrors("tag")) {
+            model.addAttribute("tag", "精査エラー");
         }
     }
 }
