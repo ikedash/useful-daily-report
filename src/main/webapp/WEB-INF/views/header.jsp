@@ -14,7 +14,7 @@
       
       <form name="searchForm" class="ui form" method="get" action="/daily-report/search">
         <div class="ui icon input">
-          <input placeholder="検索..." type="text" name="word" />
+          <input placeholder="Search..." type="text" name="word" />
           <button class="ui icon button">
             <i class="search icon"></i>
           </button>
