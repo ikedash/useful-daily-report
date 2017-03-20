@@ -1,5 +1,7 @@
 package jp.co.tis.rookies.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,5 +17,9 @@ public class DailyReportService {
 
     public DailyReport create(DailyReport dailyReport) {
         return repository.save(dailyReport);
+    }
+    
+    public List<DailyReport> list() {
+    	return repository.findAll();
     }
 }

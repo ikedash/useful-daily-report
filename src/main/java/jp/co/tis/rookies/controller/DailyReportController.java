@@ -2,6 +2,7 @@ package jp.co.tis.rookies.controller;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.BeanUtils;
@@ -110,6 +111,16 @@ public class DailyReportController {
         return "success";
     }
 
+    @RequestMapping(value = "/daily-report/search", method = RequestMethod.GET)
+    public String search(@RequestParam(value = "word", required = false) String word, Model model) {
+
+    	List<DailyReport> list = service.list();
+        model.addAttribute("dailyReportList", list);
+        model.addAttribute("word", word);
+
+        return "search";
+    }
+    
     private void setErrors(BindingResult result, Model model) {
         if (result.hasFieldErrors("title")) {
             model.addAttribute("title", "精査エラー");
