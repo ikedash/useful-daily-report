@@ -24,6 +24,7 @@
               <th>投稿日時</th>
               <th>投稿者</th>
               <th>タイトル</th>
+              <th>タグ</th>
             </tr>
           </thead>
           <tbody>
@@ -32,6 +33,7 @@
                 <td>${list.createdAt}</td>
                 <td>${list.contributor}</td>
                 <td>${list.title}</td>
+                <td>${list.tag}</td>
               </tr>
             </c:forEach>
           </tbody>

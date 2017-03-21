@@ -9,6 +9,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -111,16 +112,42 @@ public class DailyReportController {
         return "success";
     }
 
+    /**
+     * 検索結果表示.
+     *
+     * @param word 検索単語
+     * @param model Model
+     * @return search.jsp
+     */
     @RequestMapping(value = "/daily-report/search", method = RequestMethod.GET)
     public String search(@RequestParam(value = "word", required = false) String word, Model model) {
 
-    	List<DailyReport> list = service.list();
+        List<DailyReport> list = service.search(word);
+
         model.addAttribute("dailyReportList", list);
         model.addAttribute("word", word);
 
         return "search";
     }
-    
+
+    /**
+     * タイムライン.
+     *
+     * @param tag タグ
+     * @param model Model
+     * @return timeline.jsp
+     */
+    @RequestMapping(value = "/daily-report", method = RequestMethod.GET)
+    public String list(@RequestParam(value = "tag", required = false) String tag, Model model) {
+
+        List<DailyReport> list = StringUtils.isEmpty(tag) ? service.findAll() : service.filter(tag);
+
+        model.addAttribute("dailyReportList", list);
+        model.addAttribute("tag", tag);
+
+        return "timeline";
+    }
+
     private void setErrors(BindingResult result, Model model) {
         if (result.hasFieldErrors("title")) {
             model.addAttribute("title", "精査エラー");

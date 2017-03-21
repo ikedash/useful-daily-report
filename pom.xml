@@ -5,7 +5,7 @@
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>jp.co.tis</groupId>
-  <artifactId>daily-system</artifactId>
+  <artifactId>useful-daily-report</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
@@ -51,9 +51,9 @@
 
     <!-- SQLログ -->
     <dependency>
-        <groupId>org.lazyluke</groupId>
-        <artifactId>log4jdbc-remix</artifactId>
-        <version>0.2.7</version>
+      <groupId>org.lazyluke</groupId>
+      <artifactId>log4jdbc-remix</artifactId>
+      <version>0.2.7</version>
     </dependency>
 
     <!-- JSP -->
@@ -72,9 +72,23 @@
 
     <!-- commons-lang -->
     <dependency>
-        <groupId>commons-lang</groupId>
-        <artifactId>commons-lang</artifactId>
-        <version>2.6</version>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>2.6</version>
+    </dependency>
+
+    <!-- jstl -->
+    <dependency>
+      <groupId>jstl</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+      </dependency>
+
+    <!-- jstl-api -->
+    <dependency>
+      <groupId>javax.servlet.jsp.jstl</groupId>
+      <artifactId>jstl-api</artifactId>
+      <version>1.2</version>
     </dependency>
 
   </dependencies>
