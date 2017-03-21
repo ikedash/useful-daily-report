@@ -13,7 +13,7 @@ public interface DailyReportRepository extends JpaRepository<DailyReport, Intege
     @Query("SELECT x FROM DailyReport x WHERE x.title Like %:word% ORDER BY x.id")
     List<DailyReport> search(@Param("word") String word);
 
-    @Query("SELECT x FROM DailyReport x WHERE x.tag = :tag")
+    @Query("SELECT x FROM DailyReport x WHERE x.tag = :tag ORDER BY x.createdAt DESC")
     List<DailyReport> filter(@Param("tag") String tag);
 
 }

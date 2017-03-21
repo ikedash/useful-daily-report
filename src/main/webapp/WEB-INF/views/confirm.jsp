@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
 
 <html>
 
@@ -14,52 +15,48 @@
   <jsp:include page="header.jsp" flush="true" />
   <div class="full height image">
     <div class="ui main container">
-      <div class="ui information container">
-        <h1 class="ui center aligned header">投稿する内容を確認してください。</h1>
-        <form name="reportForm" class="ui form" method="post" action="/daily-report/post">
-          <div class="field">
-            <label>タイトル</label>
-            <p class="msg">${title}</p>
-            <input type="hidden" name="title" value="${title}" />
-          </div>
+      <h1 class="ui center aligned header">投稿する内容を確認してください。</h1>
+      <form name="reportForm" class="ui form" method="post" action="/daily-report/post">
+        <div class="field">
+          <label>タイトル</label>
+          <p class="msg"><c:out value="${title}" /></p>
+          <input type="hidden" name="title" value="${title}" />
+        </div>
 
-          <div class="field">
-            <label>内容</label>
-            <p class="msg">${body}</p>
-            <input type="hidden" name="body" value="${body}" />
-          </div>
+        <div class="field">
+          <label>内容</label>
+          <p class="msg"><c:out value="${body}" /></p>
+          <input type="hidden" name="body" value="${body}" />
+        </div>
 
-          <div class="field">
-            <label>本日の研修満足度</label>
-            <p class="msg">${ss}</p>
-            <input type="hidden" name="ss" value="${ss}" />
-          </div>
+        <div class="field">
+          <label>本日の研修満足度</label>
+          <p class="msg"><c:out value="${ss}" /></p>
+          <input type="hidden" name="ss" value="${ss}" />
+        </div>
 
-          <div class="field">
-            <label>満足度の理由</label>
-            <p class="msg">${causeOfSs}</p>
-            <input type="hidden" name="causeOfSs" value="${causeOfSs}" />
-          </div>
+        <div class="field">
+          <label>満足度の理由</label>
+          <p class="msg"><c:out value="${causeOfSs}" /></p>
+          <input type="hidden" name="causeOfSs" value="${causeOfSs}" />
+        </div>
 
-          <div class="field">
-            <label>内容</label>
-            <p class="msg">${tag}</p>
-            <input type="hidden" name="tag" value="${tag}" />
-          </div>
+        <div class="field">
+          <label>内容</label>
+          <p class="msg"><c:out value="${tag}" /></p>
+          <input type="hidden" name="tag" value="${tag}" />
+        </div>
 
-          <div class="field">
-            <input type="submit" class="ui fluid green button" value="投稿する" />
-          </div>
+        <div class="field">
+          <input type="submit" class="ui fluid green button" value="投稿する" />
+        </div>
 
-          <div class="field">
-            <input type="submit" class="ui fluid button" value="戻る" onclick="document.reportForm.action = '/daily-report/back'"/>
-          </div>
-
-        </form>
-      </div>
+        <div class="field">
+          <input type="submit" class="ui fluid button" value="戻る" onclick="document.reportForm.action = '/daily-report/back'"/>
+        </div>
+      </form>
     </div>
   </div>
 </div>
-
 </body>
 </html>

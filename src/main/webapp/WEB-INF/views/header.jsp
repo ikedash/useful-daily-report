@@ -7,12 +7,7 @@
       <a class="item" href="/daily-report">
         <i class="home icon"></i> Home
       </a>
-
-      <a class="item" href="/daily-report/input">
-        <i class="write icon"></i> 投稿
-      </a>
-
-      <form name="searchForm" class="ui form" method="get" action="/daily-report/search">
+      <form class="item" method="get" action="/daily-report/search">
         <div class="ui icon input">
           <input placeholder="Search..." type="text" name="word" />
           <button class="ui icon button">
@@ -23,6 +18,9 @@
     </div>
 
     <div class="right menu">
+      <a class="item" href="/daily-report/input">
+        <i class="write icon"></i> 投稿
+      </a>
       <a class="item" href="/login">
         <i class="sign in icon"></i> Sign in
       </a>
