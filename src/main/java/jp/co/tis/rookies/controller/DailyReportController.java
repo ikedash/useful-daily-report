@@ -137,6 +137,7 @@ public class DailyReportController {
     @RequestMapping(value = "/daily-report", method = RequestMethod.GET)
     public String list(@RequestParam(value = "tag", required = false) String tag, Model model) {
 
+    	// TODO: move to service.
         List<DailyReport> list = StringUtils.isEmpty(tag) ? service.findAll() : service.filter(tag);
 
         model.addAttribute("dailyReportList", list);
