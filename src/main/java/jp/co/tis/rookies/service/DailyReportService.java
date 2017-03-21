@@ -18,8 +18,12 @@ public class DailyReportService {
     public DailyReport create(DailyReport dailyReport) {
         return repository.save(dailyReport);
     }
-    
+
     public List<DailyReport> list() {
-    	return repository.findAll();
+        return repository.findAll();
+    }
+
+    public List<DailyReport> search(String word) {
+        return repository.search(word);
     }
 }

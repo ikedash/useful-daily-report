@@ -111,16 +111,24 @@ public class DailyReportController {
         return "success";
     }
 
+    /**
+     * 検索結果表示.
+     *
+     * @param word 検索単語
+     * @param model Model
+     * @return search.jsp
+     */
     @RequestMapping(value = "/daily-report/search", method = RequestMethod.GET)
     public String search(@RequestParam(value = "word", required = false) String word, Model model) {
 
-    	List<DailyReport> list = service.list();
+        List<DailyReport> list = service.search(word);
+
         model.addAttribute("dailyReportList", list);
         model.addAttribute("word", word);
 
         return "search";
     }
-    
+
     private void setErrors(BindingResult result, Model model) {
         if (result.hasFieldErrors("title")) {
             model.addAttribute("title", "精査エラー");
