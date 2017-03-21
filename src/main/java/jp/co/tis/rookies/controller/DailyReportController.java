@@ -9,6 +9,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -127,6 +128,24 @@ public class DailyReportController {
         model.addAttribute("word", word);
 
         return "search";
+    }
+
+    /**
+     * タイムライン.
+     *
+     * @param tag タグ
+     * @param model Model
+     * @return timeline.jsp
+     */
+    @RequestMapping(value = "/daily-report", method = RequestMethod.GET)
+    public String list(@RequestParam(value = "tag", required = false) String tag, Model model) {
+
+        List<DailyReport> list = StringUtils.isEmpty(tag) ? service.findAll() : service.filter(tag);
+
+        model.addAttribute("dailyReportList", list);
+        model.addAttribute("tag", tag);
+
+        return "timeline";
     }
 
     private void setErrors(BindingResult result, Model model) {
