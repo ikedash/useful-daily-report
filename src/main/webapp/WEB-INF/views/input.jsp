@@ -31,23 +31,23 @@
         <div class="field">
           <label>本日の満足度</label>
           <div class="ui slider checkbox">
-            <input type="radio" name="ss" value="VeryGood" />
+            <form:radiobutton path="ss" value="VeryGood" />
             <label>VeryGood</label>
           </div>
           <div class="ui slider checkbox">
-            <input type="radio" name="ss" value="Good" />
+            <form:radiobutton path="ss" value="Good" />
             <label>Good</label>
           </div>
           <div class="ui slider checkbox">
-            <input type="radio" name="ss" value="Medium" />
+            <form:radiobutton path="ss" value="Medium" />
             <label>Medium</label>
           </div>
           <div class="ui slider checkbox">
-            <input type="radio" name="ss" value="Bad" />
+            <form:radiobutton path="ss" value="Bad" />
             <label>Bad</label>
           </div>
           <div class="ui slider checkbox">
-            <input type="radio" name="ss" value="VeryBad" />
+            <form:radiobutton path="ss" value="VeryBad" />
             <label>VeryBad</label>
           </div>
           <form:errors path="ss" cssClass="error-messages" />

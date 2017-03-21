@@ -37,10 +37,9 @@
           <div class="content">
             <div class="meta">
               <c:out value="${list.contributor}さんの投稿" />
-              <span class="right floated time">
-                <i class="at icon" ></i>
+              <div class="right floated time">
                 <c:out value="${list.createdAt}" />
-              </span>
+              </div>
             </div>
           </div>
           <div class="content">
