@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 
 <html>
 
@@ -14,9 +14,7 @@
   <jsp:include page="header.jsp" flush="true" />
   <div class="full height image">
     <div class="ui main container">
-      <div class="ui information container">
-        <h1 class="ui center aligned header">投稿しました。</h1>
-      </div>
+      <h1 class="ui center aligned header">投稿しました。</h1>
     </div>
   </div>
 </div>

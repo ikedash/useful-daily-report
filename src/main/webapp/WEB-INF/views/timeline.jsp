@@ -15,7 +15,7 @@
 
 <jsp:include page="header.jsp" flush="true" />
 
-<div class="ui container" id="filter">
+<div class="ui main container">
   <h5 class="ui top attached header">
     キーワードでしぼりこむ<c:if test="${!empty tag}">（<c:out value="${tag}" />で絞込中）</c:if>
   </h5>
@@ -29,21 +29,24 @@
   </div>
 </div>
 
-<div class="ui container">
-  <div class="ui three column grid special cards">
-    <c:forEach items="${dailyReportList}" var="list" varStatus="status">
-      <div class="column legacyMigration daikibo performance">
+<div class="ui information container">
+  <div class="ui one column grid">
+    <c:forEach items="${dailyReportList}" var="list">
+      <div class="column">
         <div class="ui fluid card">
           <div class="content">
-            <div class="meta"><c:out value="${status.count}" /></div>
+            <div class="meta">
+              <c:out value="${list.contributor}さんの投稿" />
+              <span class="right floated time">
+                <i class="at icon" ></i>
+                <c:out value="${list.createdAt}" />
+              </span>
+            </div>
           </div>
           <div class="content">
             <a class="header"><c:out value="${list.title}" /></a>
-            <div class="meta"><c:out value="${list.contributor}" /></div>
-            <div class="meta"><c:out value="${list.createdAt}" /></div>
             <div class="description"><c:out value="${list.body}" /></div>
           </div>
-
           <div class="extra content">
             <a class="ui label"><c:out value="${list.tag}" /></a>
           </div>

@@ -47,8 +47,6 @@ public class DailyReportController {
     @RequestMapping(value = "/daily-report/confirm", method = RequestMethod.POST)
     public String confirm(@Validated DailyReportForm form, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            // TODO: 暫定的なエラー処理.
-            setErrors(result, model);
             return "input";
         }
 
@@ -74,6 +72,7 @@ public class DailyReportController {
             @RequestParam(value = "causeOfSs", required = false) String causeOfSs,
             @RequestParam(value = "tag", required = false) String tag) {
 
+        // TODO:値が消えないように対応.
         Map<String, String> map = new HashMap<String, String>();
         map.put("title", title);
         map.put("body", body);
@@ -97,8 +96,6 @@ public class DailyReportController {
     @RequestMapping(value = "/daily-report/post", method = RequestMethod.POST)
     public String post(@Validated DailyReportForm form, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            // TODO: 暫定的なエラー処理.
-            setErrors(result, model);
             return "input";
         }
 
@@ -146,23 +143,5 @@ public class DailyReportController {
         model.addAttribute("tag", tag);
 
         return "timeline";
-    }
-
-    private void setErrors(BindingResult result, Model model) {
-        if (result.hasFieldErrors("title")) {
-            model.addAttribute("title", "精査エラー");
-        }
-        if (result.hasFieldErrors("body")) {
-            model.addAttribute("body", "精査エラー");
-        }
-        if (result.hasFieldErrors("ss")) {
-            model.addAttribute("ss", "精査エラー");
-        }
-        if (result.hasFieldErrors("causeOfSs")) {
-            model.addAttribute("causeOfSs", "精査エラー");
-        }
-        if (result.hasFieldErrors("tag")) {
-            model.addAttribute("tag", "精査エラー");
-        }
     }
 }
